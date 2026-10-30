@@ -10,8 +10,15 @@ export function getRouter() {
     routeTree,
     context: { queryClient },
     scrollRestoration: true,
-    defaultPreload: 'intent',
-    defaultPreloadStaleTime: 0,
+    // Shown while a route's loader is still running.
+    defaultPendingComponent: () => (
+      <main aria-busy="true" aria-label="Loading">
+        <div className="skeleton skeleton-title" />
+        <div className="skeleton skeleton-row" />
+        <div className="skeleton skeleton-row" />
+        <div className="skeleton skeleton-row" />
+      </main>
+    ),
     defaultNotFoundComponent: () => (
       <main>
         <h1>404</h1>

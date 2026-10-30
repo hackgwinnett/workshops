@@ -103,3 +103,10 @@ h1 { color: var(--green); font-weight: 500; font-size: 2.4rem; margin: 0 0 1rem;
 @media (max-width: 52rem) {
   .xray-peek { right: 1rem; left: 1rem; width: auto; bottom: auto; top: 1rem; max-height: 45vh; }
 }
+
+/* loading skeleton */
+.skeleton { background: var(--card); border-radius: 12px; animation: skeleton-pulse 1.2s ease-in-out infinite; }
+.skeleton-title { height: 2.4rem; width: 40%; margin-bottom: 1.5rem; }
+.skeleton-row { height: 3.4rem; margin-bottom: .6rem; }
+@keyframes skeleton-pulse { 50% { opacity: .45; } }
+@media (prefers-reduced-motion: reduce) { .skeleton { animation: none; } }

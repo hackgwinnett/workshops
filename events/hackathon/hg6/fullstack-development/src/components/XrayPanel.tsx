@@ -13,7 +13,7 @@ export function XrayPanel() {
       {open && (
         <div className="xray-body">
           <p className="xray-hint">
-            Server functions called <b>from this tab</b>. Hover one to see its data.
+            Server functions called <b>from this tab</b>.
           </p>
           {entries.length === 0 ? (
             <p className="muted">No calls yet.</p>

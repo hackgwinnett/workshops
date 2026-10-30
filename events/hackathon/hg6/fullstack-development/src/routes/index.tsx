@@ -31,7 +31,7 @@ function Home() {
       </div>
 
       <p>
-        Start here 👉 <Link to="/quests">/quests</Link> shows your progress and updates as you code.
+        <b>Workshop participants</b>, start here! <Link to="/quests">/quests</Link> shows your progress and updates as you code.
       </p>
     </main>
   )
