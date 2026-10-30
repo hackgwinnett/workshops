@@ -1,0 +1,105 @@
+:root {
+  --bg: #10100f;
+  --card: #1f1f1e;
+  --line: #2f2f2d;
+  --text: #f8f3ec;
+  --muted: #b9b4ac;
+  --green: #2bc250;
+  --lgreen: #7ff098;
+  --cyan: #79e7ff;
+  --coral: #fc6058;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+a { color: var(--lgreen); }
+code { font-family: ui-monospace, 'Geist Mono', monospace; }
+
+.nav {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  padding: 1rem 1.25rem; border-bottom: 1px solid var(--line);
+}
+.nav a { color: var(--muted); text-decoration: none; margin-left: 1rem; }
+.nav a.active, .nav a:hover { color: var(--text); }
+.nav .logo { color: var(--green); font-weight: 600; margin: 0; font-family: ui-monospace, monospace; }
+.nav .quests-link { color: var(--lgreen); }
+
+main { width: min(46rem, calc(100% - 2rem)); margin: 3rem auto 8rem; }
+h1 { color: var(--green); font-weight: 500; font-size: 2.4rem; margin: 0 0 1rem; }
+.eyebrow { color: var(--cyan); font-family: ui-monospace, monospace; margin: 0; font-size: .85rem; }
+.lead { font-size: 1.15rem; }
+.muted { color: var(--muted); }
+.small { font-size: .85rem; }
+.error { color: var(--coral); }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1rem; margin: 2rem 0; }
+.card { background: var(--card); border-radius: 14px; padding: 1.1rem; color: var(--text); text-decoration: none; }
+.card:hover { outline: 1px solid var(--green); }
+.card h3 { margin: .6rem 0 .2rem; }
+.card p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+.pill { display: inline-block; font: .75rem ui-monospace, monospace; padding: .1rem .55rem; border-radius: 99px; background: #2a2a28; color: var(--muted); }
+.pill.l { background: var(--green); color: var(--bg); }
+.pill.r { background: var(--lgreen); color: var(--bg); }
+.pill.s { background: var(--cyan); color: var(--bg); }
+
+.list { list-style: none; padding: 0; margin: 0; }
+.list li { display: grid; grid-template-columns: 5rem 1fr auto; gap: 1rem; align-items: center;
+  background: var(--card); border-radius: 12px; padding: .8rem 1rem; margin-bottom: .6rem; }
+.time, .rank { font-family: ui-monospace, monospace; color: var(--lgreen); }
+
+.vote { background: #2a2a28; color: var(--text); border: 1px solid var(--line); border-radius: 10px;
+  padding: .45rem .8rem; font: inherit; cursor: pointer; min-width: 4.5rem; }
+.vote:hover { border-color: var(--green); }
+
+.progress { height: 10px; background: var(--card); border-radius: 99px; overflow: hidden; margin-bottom: 1.5rem; }
+.progress div { height: 100%; background: var(--green); transition: width .4s; }
+.quests { list-style: none; padding: 0; }
+.quests li { display: flex; gap: 1rem; background: var(--card); border-radius: 12px; padding: 1rem; margin-bottom: .6rem; }
+.quests li p { margin: .3rem 0 0; font-size: .9rem; }
+.quests .check { font-size: 1.3rem; width: 1.6rem; text-align: center; color: var(--muted); }
+.quests li.done { outline: 1px solid var(--green); }
+.quests li.done .check { color: var(--green); }
+.win { font-size: 1.2rem; color: var(--lgreen); }
+
+/* X-ray panel */
+.xray { position: fixed; right: 1rem; bottom: 1rem; width: min(28rem, calc(100% - 2rem)); z-index: 10;
+  font-size: .85rem; }
+.xray-toggle { background: var(--cyan); color: var(--bg); border: 0; border-radius: 10px; padding: .45rem .8rem;
+  font: 600 .85rem Inter, system-ui, sans-serif; cursor: pointer; float: right; }
+.xray .badge { background: var(--bg); color: var(--cyan); border-radius: 99px; padding: 0 .4rem; margin-left: .3rem; }
+.xray-body { clear: both; background: #181817; border: 1px solid var(--line); border-radius: 12px; padding: .8rem;
+  margin-top: 2.6rem; max-height: 40vh; overflow: auto; }
+.xray-hint { margin: 0 0 .5rem; color: var(--muted); }
+.xray ul { list-style: none; margin: 0; padding: 0; }
+.xray li { display: flex; align-items: center; gap: .4rem; padding: .3rem 0; border-top: 1px solid var(--line); }
+.xray li.err code { color: var(--coral); }
+.xray .tag { font: .7rem ui-monospace, monospace; padding: 0 .35rem; border-radius: 4px; color: var(--bg); }
+.xray .tag.client { background: var(--green); }
+.xray .tag.server { background: var(--cyan); }
+.xray code { flex: 1; color: var(--text); }
+.xray .ms { color: var(--muted); font-family: ui-monospace, monospace; }
+.xray li { cursor: default; outline: none; }
+.xray li:hover, .xray li:focus { background: #222220; }
+/* Hover (or tab to) a call to see what went over the wire. Fixed, so the
+   scrolling panel doesn't clip it; it sits to the left of the panel. */
+.xray-peek { display: none; position: fixed; right: calc(min(28rem, 100% - 2rem) + 1.5rem); bottom: 1rem;
+  width: min(26rem, calc(100% - 31rem)); max-height: 70vh; overflow: auto; background: #181817;
+  border: 1px solid var(--cyan); border-radius: 12px; padding: .8rem; box-shadow: 0 8px 30px #0008; }
+.xray li:hover .xray-peek, .xray li:focus .xray-peek { display: block; }
+.xray-peek p { margin: 0 0 .5rem; }
+.xray-peek b { display: block; color: var(--cyan); font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; }
+.xray-peek pre { margin: .2rem 0 .7rem; white-space: pre-wrap; word-break: break-word;
+  font: .75rem/1.4 ui-monospace, monospace; color: var(--text); }
+@media (max-width: 52rem) {
+  .xray-peek { right: 1rem; left: 1rem; width: auto; bottom: auto; top: 1rem; max-height: 45vh; }
+}
