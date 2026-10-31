@@ -2,8 +2,6 @@
 
 A real full-stack app built with TanStack Start. Parts of it are missing, and one part is dangerously broken. Your job is to fix it one layer at a time.
 
-> Hackathon 6.0 · Full Stack Development workshop · [HG]
-
 ---
 
 ## 1. Open it (≈1 min)
@@ -19,7 +17,7 @@ npm install
 npm run dev        # → http://localhost:3000
 ```
 
-**Can't use StackBlitz?** On the GitHub repo page click **Code → Codespaces → Create codespace**, then run `cd events/hackathon/hg6/fullstack-development && npm install && npm run dev`.
+**GH Codespaces as a StackBlitz alternative:** On the GitHub repo page click **Code → Codespaces → Create codespace**, then run `cd events/hackathon/hg6/fullstack-development && npm install && npm run dev`.
 
 ## 2. Find your way around (≈2 min)
 
@@ -42,8 +40,8 @@ src/
 
 Two things to keep open:
 
-- **`/quests`** re-checks your code every 4 seconds and goes green as you finish.
-- **The 🩻 X-ray panel** (bottom right) lists every call from your browser to the server and how long it took. Your **terminal** prints the same calls from the server's side.
+- **`/quests`** re-checks your code every 4 seconds and turns green when you finish.
+- **🩻 X-ray panel** (bottom right) lists every call from your browser to the server and how long it took (hover for details). Your **terminal** prints the same calls from the server's side. [[PRELOADING](https://tanstack.com/router/latest/docs/guide/preloading) IS OFF IN THIS SITE. If it was on, then an intent to load a page--like hovering a link--would preload the data and call those functions]
 
 > 💡 The first page load is rendered on the server (SSR), so it doesn't show up in X-ray. Click the nav links to see calls appear.
 
