@@ -6,7 +6,7 @@ A real full-stack app built with TanStack Start. Parts of it are missing, and on
 
 ## 1. Open it (≈1 min)
 
-**Easiest: in your browser.** Open the link your instructor gives you (it opens this repo in StackBlitz). Wait for `npm install` to finish, and the app opens in a preview pane. Nothing gets installed on your computer.
+**Easiest: in your browser.** Open the link your instructor gives you (it opens this repo as a CodeSandbox Devbox; sign in if asked). Wait for `npm install` to finish, and the app opens in a preview tab on port 3000. Nothing gets installed on your computer. To keep your work, click **Fork**.
 
 **On your own laptop** (needs Node.js 22+):
 
@@ -17,7 +17,7 @@ npm install
 npm run dev        # → http://localhost:3000
 ```
 
-**GH Codespaces as a StackBlitz alternative:** On the GitHub repo page click **Code → Codespaces → Create codespace**, then run `cd events/hackathon/hg6/fullstack-development && npm install && npm run dev`.
+**GH Codespaces as a CodeSandbox alternative:** On the GitHub repo page click **Code → Codespaces → Create codespace**, then run `cd events/hackathon/hg6/fullstack-development && npm install && npm run dev`.
 
 ## 2. Find your way around (≈2 min)
 
